@@ -41,7 +41,7 @@
                    <input type="submit" value={{ row.name }} name="coursename">
                </form> </a></td>
 
-               <td> <a><form action="" method="GET">
+               <td> <a><form action="{{url_for('module001.module001_sharing_details')}}" method="GET">
                    <input type="hidden" value={{ row.id }} name="rowid">
                    <input type="hidden" value="course" name="itemtype">
                    <input type="submit" value={{ row.code }} name="code">
