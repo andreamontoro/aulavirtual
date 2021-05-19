@@ -4,7 +4,7 @@ from wtforms import PasswordField
 from flask_admin.contrib.sqla import ModelView
 from werkzeug.security import generate_password_hash
 from flask_admin.menu import MenuLink
-from models import User, get_db, Course, Follow, ParticipationCode, ParticipationRedeem
+from models import User, get_db, Course, Follow, ParticipationCode, ParticipationRedeem, Post, Comment
 db = get_db()
 
 class AdminView(AdminIndexView):
@@ -50,6 +50,8 @@ def init_admin(app):
         admin.add_view(ProtectedView(Follow,db.session))
         admin.add_view(ProtectedView(ParticipationCode,db.session))
         admin.add_view(ProtectedView(ParticipationRedeem,db.session))
+        admin.add_view(ProtectedView(Post,db.session))
+        admin.add_view(ProtectedView(Comment,db.session))
         admin.add_link(MenuLink(name="Logout", url="/logout"))
         admin.add_link(MenuLink(name="Go back", url="/"))
     return admin

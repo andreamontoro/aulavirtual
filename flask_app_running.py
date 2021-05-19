@@ -15,9 +15,9 @@ app = init_app(__name__)
 
 #from paquete.codigo import objeto
 #from carperta.codigopython import objeto
-from module001.module001 import module001
-from module002.module002 import module002
-from module003.module003 import module003
+from module001.views_01 import module001
+from module002.views_02 import module002
+from module003.views_03 import module003
 
 app.register_blueprint(module001, url_prefix="/course")
 app.register_blueprint(module002, url_prefix="/blog")
@@ -41,6 +41,9 @@ app.config['MAIL_USERNAME'] = configuration['gmail_username']
 app.config['MAIL_PASSWORD'] = configuration['gmail_password']
 app.config['FLASKY_MAIL_SUBJECT_PREFIX'] = '[Aula Virtual] '
 app.config['FLASKY_MAIL_SENDER'] = 'Prof. Manoel Gadi'
+app.config['FLASKY_POSTS_PER_PAGE'] = configuration['FLASKY_POSTS_PER_PAGE']
+app.config['FLASKY_COMMENTS_PER_PAGE'] = configuration['FLASKY_COMMENTS_PER_PAGE']
+
 
 
 from mail import init_mail

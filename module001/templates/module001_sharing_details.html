@@ -33,8 +33,8 @@
             <h2> {{ item.code_description }} </h2>
              <ul>
               <li>Code: {{ item.code }}
-              (redeem by entering the code here: <a href="http://{{base_url}}/participation_redeem" target="_blank">http://{{base_url}}/participation_redeem</a>)</li>
-              <li>Direct link: <a href="http://{{base_url}}/participation_redeem?sharedlink=1&code={{item.code}}" target="_blank">http://{{base_url}}/participation_redeem?sharedlink=1&code={{ item.code }}</a></li>
+              (redeem by entering the code here: <a href="http://{{base_url}}/course/participation_redeem" target="_blank">http://{{base_url}}/course/participation_redeem</a>)</li>
+              <li>Direct link: <a href="http://{{base_url}}/course/participation_redeem?sharedlink=1&code={{item.code}}" target="_blank">http://{{base_url}}/course/participation_redeem?sharedlink=1&code={{ item.code }}</a></li>
               {% if filename %}
                   <li><img  src={{filename}} alt="" style="width: 40%; height: auto;"></li>
               {% endif %}
